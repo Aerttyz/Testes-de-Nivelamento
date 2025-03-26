@@ -34,6 +34,6 @@ try:
         if link.get('href').endswith('.pdf'):
             pdf_url = link.get('href' )
             pdf_name = link.text.strip()
-            print(pdf_url, pdf_name)
+            download_pdf(pdf_url, pdf_name)
 except Exception as e:
     print(e)
