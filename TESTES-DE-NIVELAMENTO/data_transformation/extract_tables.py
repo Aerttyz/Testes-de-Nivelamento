@@ -13,4 +13,6 @@ with pdfplumber.open(pdf_path) as file:
 
 df = pd.DataFrame(tables[1:], columns=tables[0])
 
+df.rename(columns=lambda x: x.replace("OD", "Seg. Odontológica").replace("AMB", "Seg. Ambulatorial"), inplace=True) 
+
 df.to_csv("saida.csv", index=False)
