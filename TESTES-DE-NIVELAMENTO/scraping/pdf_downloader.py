@@ -40,4 +40,5 @@ try:
 except Exception as e:
     print(e)
 
+os.makedirs("/content/compact_files", exist_ok=True)
 compressor.compact_files(pdf_path, "/content/compact_files/compact_files.zip")
