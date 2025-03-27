@@ -2,6 +2,7 @@ import requests
 import re
 from bs4 import BeautifulSoup
 import os
+import compressor
 
 
 pdf_path = "/content/pdfs"
@@ -35,5 +36,8 @@ try:
             pdf_url = link.get('href' )
             pdf_name = link.text.strip()
             download_pdf(pdf_url, pdf_name)
+            print("download realizado")
 except Exception as e:
     print(e)
+
+compressor.compact_files(pdf_path, "/content/compact_files/compact_files.zip")
