@@ -24,4 +24,4 @@ os.makedirs("/content/csv", exist_ok=True)
 df.to_csv(saida_csv_path, index=False)
 
 os.makedirs("/content/compact_files", exist_ok=True)
-compressor.compact_files(saida_csv_path, "/content/compact_files/compact_csv.zip")
+compressor.compact_files(saida_csv_path, "/content/compact_files/Teste_alesandro.zip")
