@@ -15,6 +15,13 @@ class DemonstracoesContabeisService:
         if operators:
             return [op.to_dict() for op in operators]  
         return None
-   
+    @staticmethod
+    def get_by_relevance(data, descricao):
+        
+        operators = DemonstracoesContabeis.get_by_relevance(data, descricao)
+        print(f"Demonstracoes: {operators}")
+        if operators:
+            return operators
+        return None
     
     

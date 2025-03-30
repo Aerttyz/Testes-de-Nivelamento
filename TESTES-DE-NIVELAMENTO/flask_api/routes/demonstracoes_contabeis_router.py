@@ -21,3 +21,14 @@ def get_demonstracoes_contabeis_by_descricao(descricao):
     except Exception as e:
         return jsonify({"error": str(e)}), 404
     
+@demonstracoes_bp.route('/demonstracoes_contabeis/relevance/<string:data>/<string:descricao>', methods=['GET'])
+def get_demonstracoes_contabeis_by_relevance(data, descricao):
+    try:
+        demonstracoes = DemonstracoesContabeisService.get_by_relevance(data, descricao)
+        print(f"Demonstracoes: {demonstracoes}")
+        if demonstracoes:
+            return jsonify(demonstracoes), 200
+        else:
+            return jsonify({"message": "No records found"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
