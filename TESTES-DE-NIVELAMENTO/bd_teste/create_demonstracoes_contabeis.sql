@@ -1,5 +1,6 @@
 CREATE TABLE demonstracoes_contabeis (
-	data DATE,
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    data DATE,
     reg_ans VARCHAR(6) NOT NULL,
     cd_conta_contabil VARCHAR(15),
     descricao VARCHAR(255),
